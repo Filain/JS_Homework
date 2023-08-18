@@ -122,16 +122,14 @@ switch (days) {
 //  5) Користувач вводить або має два числа.
 //     Потрібно знайти та вивести максимальне число з тих двох.
 //     Також потрібно врахувати коли введені рівні числа.
-let a=25;
-let b=25;
+let a = 25;
+let b = 25;
 
-if (a >b) {
+if (a > b) {
     console.log(a)
-}
-else if (a===b){
+} else if (a === b) {
     console.log('equal');
-}
-else {
+} else {
     console.log(b);
 }
 
@@ -140,8 +138,8 @@ else {
 //  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
 
 let x1 = 2;
-if (x1===0 || x1===undefined || x1===null){
-    x1='default';
+if (x1 === 0 || x1 === undefined || x1 === null) {
+    x1 = 'default';
 }
 console.log(x1);
 
@@ -159,21 +157,21 @@ let coursesAndDurationArray = [
     {title: 'FullStack', monthDuration: 7},
     {title: 'Frontend', monthDuration: 4}
 ];
-if (coursesAndDurationArray[0].monthDuration>5){
+if (coursesAndDurationArray[0].monthDuration > 5) {
     console.log('Супер');
 }
-if (coursesAndDurationArray[1].monthDuration>5){
+if (coursesAndDurationArray[1].monthDuration > 5) {
     console.log('Супер');
 }
-if (coursesAndDurationArray[2].monthDuration>5){
+if (coursesAndDurationArray[2].monthDuration > 5) {
     console.log('Супер');
 }
-if (coursesAndDurationArray[3].monthDuration>5){
+if (coursesAndDurationArray[3].monthDuration > 5) {
     console.log('Супер');
 }
-if (coursesAndDurationArray[4].monthDuration>5){
+if (coursesAndDurationArray[4].monthDuration > 5) {
     console.log('Супер');
 }
-if (coursesAndDurationArray[5].monthDuration>5){
+if (coursesAndDurationArray[5].monthDuration > 5) {
     console.log('Супер');
 }
