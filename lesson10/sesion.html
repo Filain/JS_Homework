@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let divEl = document.createElement('div');
+    let piEl = document.createElement('p');
+
+    document.body.append(divEl);
+    divEl.appendChild(piEl);
+
+    let timeArray=[]
+
+    let jsonTime = localStorage.getItem('data');
+    timeArray = JSON.parse(jsonTime);
+
+    for (const item of timeArray) {
+        piEl.innerHTML+=`${item} <br> `;
+
+    }
+
+
+    // for (let i = 0; i < timeArray.length; i++) {
+    //     piEl.innerHTML+=`${timeArray[i]} <br>` ;
+    //
+    // }
+
+
+</script>
+
+</body>
+</html>

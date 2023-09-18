@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="" name="f1">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="sruname" placeholder="Sruname">
+    <input type="text" name="age" placeholder="Age">
+    <button>Кнопка</button>
+</form>
+<div><p id="task1"></p></div>
+
+
+
+
+<div><p id="task2"></p></div>
+<form action="" name="f2">
+    <button id="PrevButton">Prev</button>
+    <button id="NextButton">Next</button>
+    <div><p id="arr1"></p></div>
+
+</form>
+<br>
+<div id="text"></div>
+<form action="" name="f3">
+    <button id="b3">Стерти</button>
+</form>
+<br>
+<form action="" name="f4">
+    <input type="number" name="age" placeholder="Вік">
+    <button>Перевірити вік</button>
+</form>
+<br>
+<br>
+<div><p id="task6"></p></div>
+
+<script>
+    // 1) Стоврити форму з трьома полями для name,sruname,age та кнопкою.
+    // При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ.
+    let f1U = document.forms.f1;
+    let f1Div = document.getElementById('task1');
+
+    f1U.onsubmit = function (e) {
+        e.preventDefault();
+        console.log(f1.name.value);
+        console.log(f1.sruname.value);
+        console.log(f1.age.value);
+        f1Div.innerHTML = `Name: ${f1.name.value} <br> Sruname: ${f1.sruname.value}<br> Age: ${f1.age.value}`
+    }
+
+
+    // Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+    // ==========================
+
+
+    // let numO = JSON.parse(localStorage.getItem('start')) || '0';
+
+
+    // є сторінка, на якій є блок, я кому знаходиьтся цифра.
+    // Написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+
+
+    let divEl = document.getElementById('task2');
+
+
+    let lsState = JSON.parse(localStorage.getItem('start')); // може бути null або пустий масив
+    if (!lsState) {
+        localStorage.setItem('start', JSON.stringify('0')); //        1) буде створюватись в localStorage
+        //           новий пустий масив при оновлені сторінки
+        lsState = '0'; // ящо прийшов null тозаписуємо пустий масив, бо буде залишатись  null ламає логіку.
+    }
+    let jsonStart = localStorage.getItem('start'); //        3) '[]' - дістає пустий масив в якості стрінги;
+    let startItem = +JSON.parse(jsonStart);//
+    window.onload = function () {
+        startItem += 1;
+        console.log(startItem);
+        divEl.innerText = `Презавантажено ${startItem}раз. `;
+        let againJsonStartItem = JSON.stringify(startItem);//  6) - робимо стрінгою додаємо в локал сторедж
+        localStorage.setItem('start', againJsonStartItem);//     7) - д
+    }
+
+
+    // 3)
+    // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще,
+    // в масив sessions зберігається інформація про дату та час відвідування сторінки.
+    // Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно
+    // відмалювати всю інформацію про відвідування сторінки index.html.
+    // Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
+
+
+    // 4) =========================
+
+    let arr100 = [];
+    for (let i = 0; i < 100; i++) {
+        arr100.push({
+            id: i + 1,
+            name: `Objeckt ${i + 1}`
+        });
+    }
+    console.log(arr100);
+
+    let currentIndex = 0;
+    let newIndex = 10;
+
+
+    // Виведення
+    let otputDiv = document.getElementById('arr1');
+
+    function print() {
+        otputDiv.innerHTML = '';
+        for (let i = currentIndex; i < currentIndex + newIndex; i++) {
+            // console.log(i);
+            // console.log(arr100[i]);
+
+            otputDiv.innerHTML = `Id = ${arr100[i].id}, Name = ${arr100[i].name}; <br>`;
+        }
+    }
+    
+    let prevButton = document.getElementById('PrevButton');
+    let nextButton = document.getElementById('NextButton');
+    print()
+
+
+    prevButton.onclick = function (e) {
+        e.preventDefault()
+        console.log('Назад');
+        // currentIndex-=10;
+        // print()
+        if (currentIndex === 0) {
+            currentIndex = 0;
+        } else {
+            currentIndex -= 10;
+            print()
+        }
+    }
+
+
+    nextButton.onclick = function (e) {
+        e.preventDefault()
+        console.log('Вперід');
+        if (currentIndex === 90) {
+            currentIndex = 90;
+        } else {
+            currentIndex += 10;
+            print()
+        }
+
+    }
+
+
+    // зробити масив на 100 об'єктів та дві кнопки prev next
+    // при завантажені сторінки з'являються перші 10 об'єктів.
+    // При натисканні next виводяться настпні 10 об'єктів
+    // При натисканні prev виводяться попередні 10 об'єктів
+    //
+    //
+    //
+    // 5)
+    // - Створити довільний елемент з id = text та створити кнопку.
+    // Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+
+    let task5 = document.getElementById('text');
+    let task5Button = document.getElementById('b3')
+    let task5K = false;
+    task5Button.onclick = function (e) {
+        e.preventDefault()
+
+        if (!task5K) {
+            task5.style.width = '330px';
+            task5.style.height = '330px';
+            task5.style.border = '1px solid red';
+            task5K = !task5K;
+        } else {
+            task5.style.width = '0';
+            task5.style.height = '0';
+            task5.style.border = 'none';
+            task5K = !task5K;
+        }
+    }
+
+    // 6)
+    // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+    // При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+
+    let task6 = document.getElementById('task6');
+
+    let f4F = document.forms.f4;
+    f4F.onsubmit = function (e) {
+        e.preventDefault();
+        console.log('Робить')
+        if (f4F.age.value > 18) {
+            task6.innerText = `Більше 18`;
+            console.log('Більше 18');
+        } else {
+            console.log('менше');
+            task6.innerText = `Менше 18`;
+        }
+    }
+
+
+    // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    //         При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+    // (Додатковачастина для завдання)
+    //
+    // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком,
+    // в середині якого є значення "100грн"
+    // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+    //         зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+    //         При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+</script>
+
+</body>
+</html>
