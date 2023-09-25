@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Details</title>
+</head>
+<body>
+<div>
+    <p class="par"></p>
+</div>
+<script>
+    /*  let url = new URL(location.href);
+      let dat = url.searchParams.get('id');
+      let userID = JSON.parse(dat);
+      console.log('userID =' + userID)
+      fetch('http://jsonplaceholder.typicode.com/users')
+          .then(value => value.json())
+          .then(value => {
+              let findUser = value.find(({id}) => id === userID)
+              console.log(findUser);
+              let a = document.getElementsByClassName('par')[0];
+
+              a.innerHTML = `id = ${findUser.id} <br> name: ${findUser.name} <br> username: ${findUser.username} <br> email: ${findUser.email} <br> address: <br> street:  ${findUser.address.street} <br> suite:  ${findUser.address.suite} <br> city:  ${findUser.address.city} <br> zipcode:  ${findUser.address.zipcode} <br>geo: <br> lat:   ${findUser.address.geo.lat} <br> lng:  ${findUser.address.geo.lng}  <br>phone:  ${findUser.phone} <br>website:  ${findUser.website} <br>company:<br>name:   ${findUser.company.name} <br> catchPhrase:  ${findUser.company.catchPhrase} <br> bs:  ${findUser.company.bs} `
+          }) */
+
+    let url = new URL(location.href);
+    let dat = url.searchParams.get('id');
+    let userID = JSON.parse(dat);
+    console.log('userID =' + userID)
+    fetch(`http://jsonplaceholder.typicode.com/users/${userID}`)
+        .then(value => value.json())
+        .then(findUser => {
+            console.log(findUser);
+            let a = document.getElementsByClassName('par')[0];
+            a.innerHTML = `id = ${findUser.id} <br> name: ${findUser.name} <br> username: ${findUser.username} <br> email: ${findUser.email} <br> address: <br> street:  ${findUser.address.street} <br> suite:  ${findUser.address.suite} <br> city:  ${findUser.address.city} <br> zipcode:  ${findUser.address.zipcode} <br>geo: <br> lat:   ${findUser.address.geo.lat} <br> lng:  ${findUser.address.geo.lng}  <br>phone:  ${findUser.phone} <br>website:  ${findUser.website} <br>company:<br>name:   ${findUser.company.name} <br> catchPhrase:  ${findUser.company.catchPhrase} <br> bs:  ${findUser.company.bs} `
+        })
+
+</script>
+</body>
+</html>
