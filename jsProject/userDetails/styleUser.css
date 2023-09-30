@@ -1,0 +1,77 @@
+li, ul {
+    list-style: none;
+    font-size: 21px;
+    font-family: Arial;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: teal;
+}
+
+div {
+    border: 2px solid #7c7c7c;
+
+    border-top: 2px solid #fff;
+    background: #c0c0c0;
+    border-left: 2px solid #fff;
+    margin: 10px;
+
+}
+
+.userDiv {
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+}
+
+.postDiv {
+    width: 15%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button1 {
+    margin: auto 10px;
+}
+
+p {
+    font-size: 21px;
+    font-family: Arial;
+    text-transform: capitalize;
+
+}
+
+.postElements {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+
+button {
+    font-family: Arial;
+    border: 1px solid #131313;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    background: #c0c0c0;
+    text-align: center;
+    padding: 5px 12px;
+    font-size: 25px;
+    margin-bottom: 12px;
+    /*width: 250px;*/
+}
+
+button:focus {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+}
+
+button:active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+    /*text-shadow: 1px 1px #222;*/
+}

@@ -1,0 +1,89 @@
+li {
+    list-style: none;
+    font-size: 25px;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: teal;
+}
+
+.wraper {
+    width: 1440px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #c0c0c0;
+    justify-content: space-evenly;
+}
+
+.divUsers {
+    min-height: 200px;
+    width: 40%;
+    background-color: #c0c0c0;
+    font-size: 36px;
+    font-family: Arial;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    justify-content: space-between
+}
+
+div {
+    border: 2px solid #7c7c7c;
+
+    border-top: 2px solid #fff;
+    background: #c0c0c0;
+    border-left: 2px solid #fff;
+    margin: 10px;
+}
+
+p {
+    text-align: center;
+    margin: 20px;
+}
+
+.posrMainTitle{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+button {
+    font-family: Arial;
+    border: 1px solid #131313;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    background: #c0c0c0;
+    text-align: center;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    padding: 5px 12px;
+    font-size: 25px;
+}
+
+button:focus {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+}
+
+button:active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+    /*text-shadow: 1px 1px #222;*/
+}
+
+.posrMainWrapTitle {
+    margin: 0;
+    background-color: #000080;
+    font-size: 25px;
+    font-family: Arial;
+    padding: 4px;
+    font-weight: bold;
+    color: #fff;
+    width: 99.1%;
+}
+
